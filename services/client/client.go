@@ -28,7 +28,7 @@ func healthCheck(ctx context.Context, conn *grpc.ClientConn) {
 			// Repeat the healthcheck after random timeout
 			res, err := c.Check(ctx, &pb.HealthCheckRequest{})
 			if err != nil {
-				log.Print("Could not rich the server")
+				log.Print("Could not reach the server")
 			} else {
 				log.Printf("Status: %s", res.GetStatus())
 			}
